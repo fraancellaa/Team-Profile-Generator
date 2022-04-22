@@ -5,8 +5,32 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const fs = require('fs');
 
-// create array of questions for user input
-function questionsManager() {
+function newTeam() {
+    inquirer
+    .prompt([
+    {
+        type:'list',
+        message: 'What type of employee will you be adding to your team?',
+        name: "addingEmployeePrompt",
+        choices: ["Manager", "Engineer", "Intern"]
+    }
+    ]).then(function(userInput) {
+        switch(userInput.addingEmployeePrompt) {
+            case "Manager": addingManager();
+            break;
+            case "Engineer": addingEngineer();
+            break;
+            case "Intern": addingIntern();
+            break;
+
+            default:
+                htmlBuilder();
+        }
+    });
+};
+
+// create array of questions for adding manager
+function addingManager() {
     inquirer
     .prompt([
         {
@@ -38,4 +62,4 @@ function questionsManager() {
 })
 };
 
-questionsManager();
+newTeam();
