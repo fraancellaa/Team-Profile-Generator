@@ -46,7 +46,7 @@ function addingManager() {
     {
     type: 'input',
     name: 'email',
-    message: "What is the employee's email?"
+    message: "What is the employee's email address?"
     }, 
     {
     type: 'input',
@@ -60,6 +60,72 @@ function addingManager() {
     )
     console.log('Employee added');
 })
+};
+
+// inquirer prompt for adding a new engineer
+function addingEngineer() {
+    inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'engineername',
+            message: "What is the engineer's name?"
+        },
+        {
+            type: 'input',
+            name: 'engineerid',
+            message: "What is the engineer's id?"
+        },
+        {
+            type: 'input',
+            name: 'engineeremail',
+            message: "What is the engineer's email address?"
+        },
+        {
+            type: 'input',
+            name: 'engineergithub',
+            message: "What is the engineer's GitHub username?"
+        }
+    ])
+    .then(answers => {
+        const newEngineer = new Engineer(
+            answers.engineername, answers.engineerid, answers.engineeremail, answers.engineergithub
+        )
+        console.log('Engineer added')
+    })
+};
+
+// inquirer prompt for adding a new intern
+function addingIntern() {
+    inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'internname',
+            message: "What is the intern's name?"
+        },
+        {
+            type: 'input',
+            name: 'internid',
+            message: "What is the intern's id?"
+        },
+        {
+            type: 'input',
+            name: 'internemail',
+            message: "What is the intern's email address?"
+        },
+        {
+            type: 'input',
+            name: 'internschool',
+            message: "What school does the intern attend?"
+        }
+    ])
+    .then(answers => {
+        const newIntern = new Intern(
+            answers.internname, answers.internid, answers.internemail, answers.internschool
+        )
+        console.log('Intern added')
+    })
 };
 
 newTeam();
