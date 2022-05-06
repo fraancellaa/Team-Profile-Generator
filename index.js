@@ -129,4 +129,16 @@ function addingIntern() {
     })
 };
 
+// finish team and connect to team.html file to update input
+const generateTeam = data => {
+    fs.writeFile('./dist/team.html', data, err => {
+        if (err) {
+            console.log(err)
+            return;
+        } else {
+            console.log('Team successfully built! Check team.html')
+        }
+    })
+};
+
 newTeam();
