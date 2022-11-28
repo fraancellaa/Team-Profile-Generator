@@ -12,6 +12,8 @@ AS A manager,
 I WANT to generate a webpage that displays my team's basic info,
 SO THAT I have quick access to their emails and GitHub profiles.
 
+This is just an example of it!
+
 # Screenshot
 <img width="1433" alt="Screenshot 2022-05-05 at 9 14 36 PM" src="https://user-images.githubusercontent.com/95050386/167051357-9c1f79be-4f88-4197-ac14-6a3edcbc1ca2.png">
 
